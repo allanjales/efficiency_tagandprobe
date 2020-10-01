@@ -66,7 +66,7 @@ const char* labelScheme[][2] = {
 const char* directoriesToSave[] = {
 	"../results/Comparison_Upsilon_Sideband_Run_vs_MC/",
 	"../results/Comparison_Upsilon_Fitting_Run_vs_MC/",
-	"../results/Comparison_Upsilon_Sideband_vs_Fitting/"
+	"../results/Comparison_Upsilon_Sideband_vs_Fitting/",
 	"../results/Comparison_Jpsi_Sideband_Run_vs_MC/",
 	"../results/Comparison_Jpsi_Fitting_Run_vs_MC/",
 	"../results/Comparison_Jpsi_Sideband_vs_Fitting/"
@@ -138,6 +138,8 @@ void compare_eff(TEfficiency* pEff0, TEfficiency* pEff1, string resultName, cons
 		pEff0->GetPaintedGraph()->GetHistogram()->GetXaxis()->SetRangeUser(0.,40.);
 		graph->SetMinimum(0.5);
 		graph->SetMaximum(1.2);
+
+		pEff0->SetTitle("Efficiency of Tracker Muon Probe;p_{T} [GeV/c];Efficiency");
 	}
 	
 	//Set range if is eta
@@ -146,6 +148,8 @@ void compare_eff(TEfficiency* pEff0, TEfficiency* pEff1, string resultName, cons
 		pEff0->GetPaintedGraph()->GetHistogram()->GetXaxis()->SetRangeUser(-3.,3.);
 		graph->SetMinimum(0.8);
 		graph->SetMaximum(1.08);
+
+		pEff0->SetTitle("Efficiency of Tracker Muon Probe;#eta;Efficiency");
 	}
 	
 	//Set range if is phi
@@ -153,6 +157,8 @@ void compare_eff(TEfficiency* pEff0, TEfficiency* pEff1, string resultName, cons
 	{
 		graph->SetMinimum(0.8);
 		graph->SetMaximum(1.08);
+
+		pEff0->SetTitle("Efficiency of Tracker Muon Probe;#phi [rad];Efficiency");
 	}
 
 	//Legenda
